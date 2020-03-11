@@ -1,31 +1,28 @@
 # Deplying Nucypher (worker/staker) to Azure Cloud
 
-Set of best practices, playbooks, and guides for deploying nucypher nodes on Azure
+
 
 
 ### Instances Provisioning Playbooks for Azure
 
-If you already have Ansible setup to run playbooks against the Azure resource API then you can run the `deploy_nucypher_azure_infra.yml`
+If you have Ansible setup to run playbooks against the Azure resource API then you can run the `deploy_nucypher_azure_infra.yml`
 
-Otherwise see below for step-by-step guide for setting up a brand new azure account for infrastructure deployment.
+See below for step-by-step guide for setting up a brand new azure account for infrastructure deployment.
 
 
 ### Setting up your Ubuntu environment for running Ansible Azure
 
-You will need to have Ansible (Azure module) installed on your local host (documentation [here](https://docs.ansible.com/ansible/latest/scenario_guides/guide_azure.html).
+You have 3 options for using Ansible to deploy your infrastructure
 
-You can also use the Azure cloud shell (within the Azure portal, which comes pre-installed with Ansible (w/ Azure module) as well as your credentials)
+1. Utilize the "cloud shell" within the Azure portal which comes pre-installed with Ansible and your credentials.
+2. Use your own copy of Ansible and install the Azure module (through pip)
+3. Setup your own deployment machine on Ubuntu to run playbooks and deploy workers.
 
-You will also need the following credentials set as environment variables to use Ansible (w/ Azure module):
+Option 1 is ready to go, use the play book `deploy_nucypher_azure_infra.yml` followed by the playbooks in the /worker/ folder
 
-```
-AZURE_CLIENT_ID
-AZURE_SECRET
-AZURE_SUBSCRIPTION_ID
-AZURE_TENANT
-```
+For options 2 you will need Ansible (Azure module) installed on your local host (documentation [here](https://docs.ansible.com/ansible/latest/scenario_guides/guide_azure.html)).
 
-I've also included a quick set of steps below to setup a vanilla Ubuntu 16.04 to run Ansible (w/ Azure module) all that is needed are the 4 credentials above:
+For option 3 I've included the following steps below to setup a vanilla Ubuntu 16.04 to run Ansible (w/ Azure module), geth, and everything you need to deploy the ansible playbooks for your Nucypher workers.
 
 #### Install python 3 , pip 3
 ```
