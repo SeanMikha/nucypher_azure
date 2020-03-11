@@ -1,4 +1,4 @@
-- name: Nucypher (staker/worker)VM for Azure
+- name: Nucypher (staker/worker) VM for Azure
   hosts: localhost
   connection: local
   tasks:
