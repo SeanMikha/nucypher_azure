@@ -25,7 +25,7 @@
     azure_rm_publicipaddress:
       resource_group: nucypher_rg1
       allocation_method: Static
-      name: nucypher_vm1_ip1
+      name: nucyphervm1_ip1
     register: output_ip_address
   
   - name: View Public IP which will be created for the VM
@@ -61,23 +61,23 @@
   - name: Virtual Network VM NIC
     azure_rm_networkinterface:
       resource_group: nucypher_rg1
-      name: nucypher_vm1_nic1
+      name: nucyphervm1_nic1
       virtual_network: nucypher_vnet1
       subnet: nucypher_subnet1
-      public_ip_name: nucypher_vm1_ip1
+      public_ip_name: nucyphervm1_ip1
       security_group: nucypher_nsg1
   
   - name: Create VM
     azure_rm_virtualmachine:
       resource_group: nucypher_rg1
-      name: nucypher_vm1
+      name: nucyphervm1
       vm_size: Standard_B1s
       admin_username: azureuser
       ssh_password_enabled: false
       ssh_public_keys:
         - path: /home/azureuser/.ssh/authorized_keys
           key_data: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjvwylmZfw3zLszsHEimxsKXHCg/Ph1D+8Du+Q+Tnf54b8xLfJB1CqpNI3dz8oDfbd72NSUcw4uHxpO+B6u15H7vxq5naQOCEtzSQMObMfQXFfzvqAfEL8XhRsnltWFut8uKwnsnZCwreCbrIFmV74UdqIcdG9FUyaHUtzszlA8siHUjx0SHZfCFmmPoMIPWKq2wLzcpSC9gDK4dVayxPC1JJlxvwd0BDjf69uFwNbKs4N+SFrrvR4jmMQk5BZL479JIegGd4TbxMY7kkR/LqrfxI3wnB5xgLcnUkSEI8Tsg3n/zxqMuZxl5lygFU4rEBX3QQKTyk3mO1VUMLPc5F3 smikha
-      network_interfaces: nucypher_vm1_nic1
+      network_interfaces: nucyphervm1_nic1
       image:
         offer: UbuntuServer
         publisher: Canonical
