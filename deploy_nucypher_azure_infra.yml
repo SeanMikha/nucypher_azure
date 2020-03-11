@@ -48,7 +48,7 @@
           destination_port_range: 9151
           access: Allow
           priority: 3002
-          direction: outbound
+          direction: Outbound
   - name: Virtual Network VM NIC
     azure_rm_networkinterface:
       resource_group: nucypher_rg1
