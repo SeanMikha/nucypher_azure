@@ -22,7 +22,6 @@ For option 3 I've included the following steps below to setup a vanilla Ubuntu 1
 
 #### Install python 3 , pip 3
 ```
-sudo apt-get install -y software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update
 sudo apt-get install -y python3 python3-pip 
