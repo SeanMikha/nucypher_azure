@@ -30,7 +30,7 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update
 sudo apt-get install -y python-pip 
 ```
-#### install Ansible (w/ Azure module)
+#### Install Ansible (w/ Azure module)
 ```
 sudo python3 -m pip install --upgrade pip
 sudo python3 -m pip install 'ansible[azure]'
