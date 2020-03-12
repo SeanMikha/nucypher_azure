@@ -18,7 +18,7 @@ Option 1 is ready to go, use the play book `deploy_nucypher_azure_infra.yml` fol
 
 For options 2 you will need Ansible (Azure module) installed on your local host (documentation [here](https://docs.ansible.com/ansible/latest/scenario_guides/guide_azure.html)).
 
-For option 3 I've included the following steps below to setup a vanilla Ubuntu 16.04 to run Ansible (w/ Azure module), geth, and everything you need to deploy the ansible playbooks for your Nucypher workers.
+For option 3 I've included the following steps below to setup a vanilla Ubuntu node to run Ansible (w/ Azure module), geth, and everything you need to deploy the ansible playbooks for your Nucypher staker/workers.
 
 (Instructions valid for Canonical Ubuntu 16.04 and 18.04)
 
