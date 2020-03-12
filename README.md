@@ -27,7 +27,6 @@ For option 3 I've included the following steps below to setup a vanilla Ubuntu n
 ```
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update
-sudo apt-get install -y build-essential libssl-dev libffi-dev python-dev
 sudo apt-get install -y python python-pip 
 ```
 
