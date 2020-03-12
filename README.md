@@ -20,11 +20,15 @@ For options 2 you will need Ansible (Azure module) installed on your local host 
 
 For option 3 I've included the following steps below to setup a vanilla Ubuntu 16.04 to run Ansible (w/ Azure module), geth, and everything you need to deploy the ansible playbooks for your Nucypher workers.
 
-#### Install python 3 , pip 3
+(Instructions valid for Canonical Ubuntu 16.04 and 18.04)
+
+Note: The Ansible Azure module requires python 2.7>, however we set the ansible python intrepeter to 3.x in the inventory files which is preserved throughout the playbooks for Nucypher deployment.
+
+#### Install pip
 ```
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update
-sudo apt-get install -y python3 python3-pip 
+sudo apt-get install -y python-pip 
 ```
 #### install Ansible (w/ Azure module)
 ```
