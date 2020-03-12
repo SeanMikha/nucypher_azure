@@ -18,24 +18,27 @@ Option 1 is ready to go, use the play book `deploy_nucypher_azure_infra.yml` fol
 
 For options 2 you will need Ansible (Azure module) installed on your local host (documentation [here](https://docs.ansible.com/ansible/latest/scenario_guides/guide_azure.html)).
 
-For option 3 I've included the following steps below to setup a vanilla Ubuntu node to run Ansible (w/ Azure module), geth, and everything you need to deploy the ansible playbooks for your Nucypher staker/workers.
+For option 3 I've included the following steps below to setup a vanilla Ubuntu node to run Ansible (w/ Azure module), geth, and everything you need to deploy the Ansible playbooks for your Nucypher staker/workers.
 
 (Instructions valid for Canonical Ubuntu 16.04 and 18.04)
 
-Note: The Ansible Azure module requires python 2.7>, however we set the ansible python intrepeter to 3.x in the inventory files which is preserved throughout the playbooks for Nucypher deployment.
 
-#### Install pip
+#### Install python, pip
 ```
+sudo apt-get install -y software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update
+sudo apt-get install -y python3.6
 sudo apt-get install -y python-pip 
 ```
+
 #### Install Ansible (w/ Azure module)
 ```
-sudo python -m pip install --upgrade pip
-sudo python -m pip install 'ansible[azure]'
-sudo python -m pip install --upgrade 'ansible[azure]'
+pip install --upgrade pip
+pip install 'ansible[azure]'
+pip install --upgrade 'ansible[azure]'
 ```
+
 #### Export environment variables (Azure credentials)
 ```
 export AZURE_CLIENT_ID=''
@@ -43,6 +46,7 @@ export AZURE_SECRET=''
 export AZURE_SUBSCRIPTION_ID=''
 export AZURE_TENANT=''
 ```
+
 #### Create 2GB swap file (for local geth instance)
 ```
 sudo fallocate -l 2G /swapfile
@@ -52,12 +56,14 @@ sudo swapon /swapfile
 sudo cp /etc/fstab /etc/fstab.bak
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 ```
+
 #### Install local geth
 ```
 sudo add-apt-repository -y ppa:ethereum/ethereum
 sudo apt-get update
 sudo apt-get install -y ethereum
 ```
+
 #### Run geth (goerli testnet, remove for mainnet)
 ```
 nohup geth --goerli --syncmode fast --cache 1024 &
