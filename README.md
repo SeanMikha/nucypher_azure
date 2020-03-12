@@ -32,9 +32,9 @@ sudo apt-get install -y python-pip
 ```
 #### Install Ansible (w/ Azure module)
 ```
-sudo python3 -m pip install --upgrade pip
-sudo python3 -m pip install 'ansible[azure]'
-sudo python3 -m pip install --upgrade 'ansible[azure]'
+sudo python -m pip install --upgrade pip
+sudo python -m pip install 'ansible[azure]'
+sudo python -m pip install --upgrade 'ansible[azure]'
 ```
 #### Export environment variables (Azure credentials)
 ```
