@@ -23,16 +23,16 @@ For option 3 I've included the following steps below to setup a vanilla Ubuntu n
 (Instructions valid for Canonical Ubuntu 16.04 and 18.04)
 
 
-#### Install python, pip
+#### Install virtualenv and activate
 ```
 sudo apt-get update
 sudo apt-get install -y virtualenv
+virtualenv nucypher_ansible
+source nucypher_ansible/bin/activate
 ```
 
 #### Install Ansible (w/ Azure module) inside a virtual environment
 ```
-virtualenv nucypher_ansible
-source nucypher_ansible/bin/activate
 pip install --upgrade pip
 pip install 'ansible[azure]'
 pip install --upgrade 'ansible[azure]'
