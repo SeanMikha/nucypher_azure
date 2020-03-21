@@ -70,7 +70,8 @@ Wait for the result from above to come back as false
 #### Run ansible playbook to deploy Nucypher Staker and Worker(s)
 
 
-**Inventory values:**
+
+<ins>Inventory values:</ins>
 
 Azure Location: West Central US (typcially one of the lowest cost locations)
 
