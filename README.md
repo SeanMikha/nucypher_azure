@@ -20,7 +20,7 @@ For options 2 you will need Ansible (Azure module) installed on your local host 
 
 For option 3 I've included the following steps below to setup a vanilla Ubuntu node to run Ansible (w/ Azure module), geth, and everything you need to deploy the Ansible playbooks for your Nucypher staker/workers.
 
-(Instructions valid for Canonical Ubuntu 16.04 and 18.04)
+(Instructions valid w/ Canonical Ubuntu 18.04)
 
 
 #### Install virtualenv and activate
@@ -33,7 +33,6 @@ source nucypher_ansible/bin/activate
 
 #### Install Ansible (w/ Azure module) inside a virtual environment
 ```
-pip install --upgrade pip
 pip install 'ansible[azure]'
 pip install --upgrade 'ansible[azure]'
 ```
