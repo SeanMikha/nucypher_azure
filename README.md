@@ -30,13 +30,10 @@ sudo apt-get install -y virtualenv
 virtualenv nucypher_ansible
 source nucypher_ansible/bin/activate
 ```
-
 #### Install Ansible (w/ Azure module) inside a virtual environment
 ```
 pip install 'ansible[azure]'
-pip install --upgrade 'ansible[azure]'
 ```
-
 #### Export environment variables (Azure credentials)
 ```
 export AZURE_CLIENT_ID=''
@@ -44,7 +41,6 @@ export AZURE_SECRET=''
 export AZURE_SUBSCRIPTION_ID=''
 export AZURE_TENANT=''
 ```
-
 #### Create 2GB swap file (for local geth instance)
 ```
 sudo fallocate -l 2G /swapfile
@@ -54,26 +50,22 @@ sudo swapon /swapfile
 sudo cp /etc/fstab /etc/fstab.bak
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 ```
-
 #### Install geth
 ```
 sudo add-apt-repository -y ppa:ethereum/ethereum
 sudo apt-get update
 sudo apt-get install -y ethereum
 ```
-
 #### Run geth (goerli testnet)
 ```
 nohup geth --goerli --syncmode fast --cache 1024 &
 ```
-
 #### Check geth is finished syncing
 ```
 geth attach ~/.ethereum/goerli/geth.ipc
 (within geth): eth.syncing
 ```
 Wait for the result from above to come back as `false`
-
 #### Run ansible playbook to deploy Nucypher Staker and Worker(s)
 Inventory values: 
 Azure Location: West Central US (typcially one of the lowest cost locations)
