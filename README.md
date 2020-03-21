@@ -73,6 +73,8 @@ Inventory values:
 Azure Location: West Central US (typcially one of the lowest cost locations)
 
 Linux Distribution: Ubuntu 18.04 LTS
+
+VM Size: B1s (1 vCPU , 1GB RAM, 4GB Ephemeral Disk)
 ```
 ansible-playbook deploy_nucypher_azure_infra.yml -i inventory.yml
 ```
