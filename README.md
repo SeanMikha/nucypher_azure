@@ -8,7 +8,7 @@ If you have Ansible setup to run playbooks against the Azure resource API then y
 
 ### Setting up your Ubuntu environment for running Ansible Azure
 
-You have 3 options for using Ansible to deploy your infrastructure
+You have 3 options for using Ansible to deploy your infrastructure:
 
 1. Utilize the "cloud shell" within the Azure portal which comes pre-installed with Ansible and your credentials.
 2. Use your own copy of Ansible and install the Azure module (through pip)
@@ -25,13 +25,14 @@ For option 3 I've included the following steps below to setup a vanilla Ubuntu n
 
 #### Install python, pip
 ```
-sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update
-sudo apt-get install -y python python-pip 
+sudo apt-get install -y virtualenv
 ```
 
-#### Install Ansible (w/ Azure module)
+#### Install Ansible (w/ Azure module) inside a virtual environment
 ```
+virtualenv nucypher_ansible
+source nucypher_ansible/bin/activate
 pip install --upgrade pip
 pip install 'ansible[azure]'
 pip install --upgrade 'ansible[azure]'
@@ -55,14 +56,14 @@ sudo cp /etc/fstab /etc/fstab.bak
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 ```
 
-#### Install local geth
+#### Install geth
 ```
 sudo add-apt-repository -y ppa:ethereum/ethereum
 sudo apt-get update
 sudo apt-get install -y ethereum
 ```
 
-#### Run geth (goerli testnet, remove for mainnet)
+#### Run geth (goerli testnet)
 ```
 nohup geth --goerli --syncmode fast --cache 1024 &
 ```
