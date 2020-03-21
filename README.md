@@ -65,10 +65,13 @@ nohup geth --goerli --syncmode fast --cache 1024 &
 geth attach ~/.ethereum/goerli/geth.ipc
 (within geth): eth.syncing
 ```
-Wait for the result from above to come back as `false`
+Wait for the result from above to come back as false
 #### Run ansible playbook to deploy Nucypher Staker and Worker(s)
+
 Inventory values: 
+
 Azure Location: West Central US (typcially one of the lowest cost locations)
+
 Linux Distribution: Ubuntu 18.04 LTS
 ```
 ansible-playbook deploy_nucypher_azure_infra.yml -i inventory.yml
