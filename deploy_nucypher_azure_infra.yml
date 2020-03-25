@@ -29,7 +29,7 @@
     register: output_ip_address
     loop: "{{ vmlist }}"
 
- - name: Allow SSH and Nucypher communication ports in network security group
+  - name: Allow SSH and Nucypher communication ports in network security group
     azure_rm_securitygroup:
       resource_group: "{{ resgroup }}"
       name: "{{ item.nsg }}"
@@ -75,7 +75,7 @@
       ssh_password_enabled: false
       ssh_public_keys:
         - path: "/home/{{ user }}/.ssh/authorized_keys"
-          key_data: "{{ osshpk }}"
+          key_data: "{{ osshpkey }}"
       network_interfaces: "{{ item.nic }}"
       image:
         offer: UbuntuServer
