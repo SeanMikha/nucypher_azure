@@ -71,10 +71,10 @@
       resource_group: "{{ resgroup }}"
       name: "{{ item.name }}"
       vm_size: "{{ item.size }}"
-      admin_username: "{{ item.user }}"
+      admin_username: "{{ user }}"
       ssh_password_enabled: false
       ssh_public_keys:
-        - path: "/home/{{ item.user }}/.ssh/authorized_keys"
+        - path: "/home/{{ user }}/.ssh/authorized_keys"
           key_data: "{{ osshpk }}"
       network_interfaces: "{{ item.nic }}"
       image:
