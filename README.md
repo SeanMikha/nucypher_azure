@@ -31,38 +31,38 @@ azureuser@ncdeploy:~$ virtualenv nucypher_ansible
 azureuser@ncdeploy:~$ source nucypher_ansible/bin/activate
 ```
 #### Install Ansible (w/ Azure module) inside a virtual environment
-```
-pip install 'ansible[azure]'
+```console
+azureuser@ncdeploy:~$ pip install 'ansible[azure]'
 ```
 #### Export environment variables (Azure credentials)
-```
-export AZURE_CLIENT_ID=''
-export AZURE_SECRET=''
-export AZURE_SUBSCRIPTION_ID=''
-export AZURE_TENANT=''
+```console
+azureuser@ncdeploy:~$ export AZURE_CLIENT_ID=''
+azureuser@ncdeploy:~$ export AZURE_SECRET=''
+azureuser@ncdeploy:~$ export AZURE_SUBSCRIPTION_ID=''
+azureuser@ncdeploy:~$ export AZURE_TENANT=''
 ```
 #### Create 2GB swap file (for local geth instance)
-```
-sudo fallocate -l 2G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
-sudo cp /etc/fstab /etc/fstab.bak
-echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```console
+azureuser@ncdeploy:~$ sudo fallocate -l 2G /swapfile
+azureuser@ncdeploy:~$ sudo chmod 600 /swapfile
+azureuser@ncdeploy:~$ sudo mkswap /swapfile
+azureuser@ncdeploy:~$ sudo swapon /swapfile
+azureuser@ncdeploy:~$ sudo cp /etc/fstab /etc/fstab.bak
+azureuser@ncdeploy:~$ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 ```
 #### Install geth
-```
-sudo add-apt-repository -y ppa:ethereum/ethereum
-sudo apt-get update
-sudo apt-get install -y ethereum
+```console
+azureuser@ncdeploy:~$ sudo add-apt-repository -y ppa:ethereum/ethereum
+azureuser@ncdeploy:~$ sudo apt-get update
+azureuser@ncdeploy:~$ sudo apt-get install -y ethereum
 ```
 #### Run geth (goerli testnet)
-```
-nohup geth --goerli --syncmode fast --cache 1024 &
+```console
+azureuser@ncdeploy:~$ nohup geth --goerli --syncmode fast --cache 1024 &
 ```
 #### Check geth is finished syncing
-```
-geth attach ~/.ethereum/goerli/geth.ipc
+```console
+azureuser@ncdeploy:~$ geth attach ~/.ethereum/goerli/geth.ipc
 (within geth): eth.syncing
 ```
 Wait for the result from above to come back as false
@@ -72,12 +72,9 @@ Wait for the result from above to come back as false
 
 
 <ins>Inventory values:</ins>
-
-Azure Location: West Central US (typcially one of the lowest cost locations)
-
-Linux Distribution: Ubuntu 18.04 LTS
-
-VM Size: B1s (1 vCPU , 1GB RAM, 4GB Ephemeral Disk)
-```
-ansible-playbook deploy_nucypher_azure_infra.yml -i inventory.yml
+* Azure Location: West Central US (typcially one of the lowest cost locations)
+* Linux Distribution: Ubuntu 18.04 LTS
+* VM Size: B1s (1 vCPU , 1GB RAM, 4GB Ephemeral Disk)
+```console
+azureuser@ncdeploy:~$ ansible-playbook deploy_nucypher_azure_infra.yml -i inventory.yml
 ```
