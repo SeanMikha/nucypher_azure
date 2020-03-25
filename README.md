@@ -24,11 +24,11 @@ For option 3 I've included the following steps below to setup a vanilla Ubuntu n
 
 
 #### Install virtualenv and activate
-```shell
-sudo apt-get update
-sudo apt-get install -y virtualenv
-virtualenv nucypher_ansible
-source nucypher_ansible/bin/activate
+```console
+azureuser@ncdeploy:~$ sudo apt-get update
+azureuser@ncdeploy:~$ sudo apt-get install -y virtualenv
+azureuser@ncdeploy:~$ virtualenv nucypher_ansible
+azureuser@ncdeploy:~$ source nucypher_ansible/bin/activate
 ```
 #### Install Ansible (w/ Azure module) inside a virtual environment
 ```
