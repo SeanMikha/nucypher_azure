@@ -72,8 +72,8 @@ Wait for the result from above to come back as false
 <ins>Inventory values:</ins>
 * Azure Location: West Central US (typcially one of the lowest cost locations)
 * Linux Distribution: Ubuntu 18.04 LTS
-* VM Size: B1s (1 vCPU , 1GB RAM, 4GB Ephemeral Disk)  
-Note: make sure to update the inventory file with your public key for login.
+* VM Size: B1s (1 vCPU , 1GB RAM, 4GB Ephemeral Disk)
+* Make sure to update the inventory file with your public key for login.
 
 ```console
 azureuser@ncdeploy:~$ ansible-playbook deploy_nucypher_azure_infra.yml -i inventory.yml
