@@ -4,7 +4,7 @@ all:
       resgroup: "ncrg"
       vnet: "ncvnet"
       subnet: "ncsnet"
-      osshpkey: "<public-key-here>"
+      osshpkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCjvwylmZfw3zLszsHEimxsKXHCg/Ph1D+8Du+Q+Tnf54b8xLfJB1CqpNI3dz8oDfbd72NSUcw4uHxpO+B6u15H7vxq5naQOCEtzSQMObMfQXFfzvqAfEL8XhRsnltWFut8uKwnsnZCwreCbrIFmV74UdqIcdG9FUyaHUtzszlA8siHUjx0SHZfCFmmPoMIPWKq2wLzcpSC9gDK4dVayxPC1JJlxvwd0BDjf69uFwNbKs4N+SFrrvR4jmMQk5BZL479JIegGd4TbxMY7kkR/LqrfxI3wnB5xgLcnUkSEI8Tsg3n/zxqMuZxl5lygFU4rEBX3QQKTyk3mO1VUMLPc5F3"
       user: "azureuser"
       vmlist:
         - { name: "ncstaker", nic: "stakernic", ip: "stakerip", nsg: "stakernsg", size: "Standard_B1s" }
