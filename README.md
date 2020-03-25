@@ -12,7 +12,7 @@ You have 3 options for using Ansible to deploy your infrastructure:
 
 1. Utilize the "cloud shell" within the Azure portal which comes pre-installed with Ansible and your credentials.
 2. Use your own copy of Ansible and install the Azure module (through pip)
-3. Setup your own deployment machine on Ubuntu to run playbooks and deploy workers.
+3. Setup your own deployment machine on Ubuntu to run playbooks and deploy stakers/workers.
 
 Option 1 is ready to go, use the play book `deploy_nucypher_azure_infra.yml` followed by the playbooks in the /worker/ folder
 
@@ -20,11 +20,11 @@ For options 2 you will need Ansible (Azure module) installed on your local host 
 
 For option 3 I've included the following steps below to setup a vanilla Ubuntu node to run Ansible (w/ Azure module), geth, and everything you need to deploy the Ansible playbooks for your Nucypher staker/workers.
 
-(Instructions valid w/ Canonical Ubuntu 18.04)
+(Instructions valid w/ Canonical Ubuntu 16.04/18.04)
 
 
 #### Install virtualenv and activate
-```
+```shell
 sudo apt-get update
 sudo apt-get install -y virtualenv
 virtualenv nucypher_ansible
